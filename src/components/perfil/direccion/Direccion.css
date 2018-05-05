@@ -1,0 +1,119 @@
+.container {
+  font-family: 'Montserrat', sans-serif;
+  max-width:600px;
+  margin:0;
+  background-color: white;
+  border-radius: 2%;
+
+}
+
+.container * {
+  box-sizing: border-box;
+}
+
+.flex-outer,
+.flex-inner {
+  list-style-type: none;
+  padding: 0;
+}
+
+.flex-outer {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.flex-outer li,
+.flex-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.flex-inner {
+  padding: 0 8px;
+  justify-content: space-between;
+}
+
+.flex-outer > li:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.flex-outer li label,
+.flex-outer li p {
+  padding: 8px;
+  font-weight: 300;
+  letter-spacing: .09em;
+text-transform: capitalize;
+}
+
+.flex-outer > li > label,
+.flex-outer li p {
+  flex: 1 0 120px;
+  max-width: 220px;
+}
+
+.flex-outer > li > label + *,
+.flex-inner {
+  flex: 1 0 220px;
+}
+
+.flex-outer li p {
+  margin: 0;
+}
+
+.flex-outer li input:not([type='checkbox']),
+.flex-outer li textarea {
+  max-width:45%;
+  height: 9%;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin: 2px 0;
+  border: 1px solid #ccc;
+  margin-top: 5px;
+    margin-right:  5px;
+    margin-left: 5px;
+}
+
+
+.flex-outer li input:not([type='checkbox']):focus,
+.flex-outer li textarea:focus {
+  border: 1px solid #77c1f6;
+}
+
+
+.flex-outer button {
+  position: relative;
+left:-15%;
+margin-bottom: 10px;
+  width: 200px;
+margin-top:5px;
+color: #323232;
+background-color: transparent;
+border: 1px solid #AAA;
+padding: .8rem 2.5rem;
+font-weight: 700;
+font-size: .7rem;
+text-transform: uppercase;
+letter-spacing: .1rem;
+-webkit-transition: all 1s ease;
+-o-transition: all 1s ease;
+transition: all 1s ease;
+}
+.flex-outer button:hover {
+background: #456D56;
+color: white;
+font-weight: 700;
+font-size: .7rem;
+text-transform: uppercase;
+letter-spacing: .1rem;
+-webkit-transition: all 1s ease;
+-o-transition: all 1s ease;
+transition: all 1s ease;
+
+}
+
+
+
+.flex-inner li {
+  width: 100px;
+}
