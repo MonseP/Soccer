@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Admin.css';
 import Boton from './Boton.js';
+import { message } from 'antd'
 import {Link, NavLink} from 'react-router-dom';
 import { Tabs } from 'antd';
 import { Modal, Button } from 'antd';
@@ -61,16 +62,18 @@ class AdminDisplay extends Component {
             });
     };
 
-    remove = (id) =>{
-        if(window.confirm("Seguro?")){
-            firebase.database().ref("products")
-                .child(id)
-                .remove()
-                .then(r=>toastr.warning("eliminado"))
-                .catch(e=>{
-                    toastr.error("no se puede")});
-        }
-    };
+    remove = (id) => {
+          if (window.confirm("Estas seguro de esto?")) {
+          firebase.database().ref("products")
+
+                  .remove()
+                  .child(id)
+                  .then(r => message.success('Evento eliminado'))
+                  .catch(e => message.warning("no se borró"));
+          }
+
+  };
+
     onChangeForm = (e) => {
         let newProduct = this.state.newProduct;
         const field = e.target.name;
@@ -130,7 +133,7 @@ class AdminDisplay extends Component {
     };
 
 
-    
+
 
 
     render() {
@@ -215,6 +218,18 @@ class AdminDisplay extends Component {
                                         key="cant"
                                     />
 
+
+
+                                    <Column
+                                         title= "Delete"
+                                          key="name"
+                                          render={(text) => (
+                                           <span>
+                                      <Button type="primary" onClick={this.remove}>Delete</Button>
+
+                                           </span>
+                                                   )}
+                                           />
                                 </Table>
 
                                     <Button type="primary" onClick={this.showModal}>Agregar</Button>

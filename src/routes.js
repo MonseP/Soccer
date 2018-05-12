@@ -16,7 +16,7 @@ import BeeContainer from './components/miel/BeeContainer';
 
 export const Routes = () => (
     <Switch>
-        <Route exact path="/" component={Home}/>
+        <Route exact path="/" component={Login}/>
         <Route exact path="/catalogo" component={Product}/>
         <Route path="/login" component={Login}/>
         <Route path="/contacto" component={Contacto}/>
