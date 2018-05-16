@@ -14,11 +14,7 @@ export const ProductDetailDisplay = ({name, desc, price,photos, info}) => {
                         <div>
                             <ul className="galeria">
                                 <li className="box_im"><a href="#img1"> <img   src={photos} alt=""/></a></li>
-                                <div className="ul_flex">
-                                    <li className="box_img"><a href="#img2"><img src="http://static2.businessinsider.com/image/59af37c96eac40d82b8b77e5-1435/3z7a9805.jpg"/></a></li>
-                                    <li className="box_img"><a href="#img3"><img src="http://wppullzone1.epicmatcha.netdna-cdn.com/wp-content/uploads/2016/04/bulletproof-coffee-vs-bombproof-matcha-2.jpg"/></a></li>
-                                    <li className="box_img"><a href="#img4"><img src="https://drlauryn.com/wp-content/uploads/2016/04/Bulletproof-Coffee-lululemon-blog-header.jpeg"/></a></li>
-                                </div>
+
                             </ul>
 
                             <div className="modal" id="img1">
@@ -71,12 +67,10 @@ export const ProductDetailDisplay = ({name, desc, price,photos, info}) => {
                         <p className="descript_data">{desc}</p>
                        <div className="box_price">
                         <p className="descript_price">$ {price} MXN</p>
-                           <hr className="linea_product"/>
-                           <button type="button" class="extras" data-id="" data-qty="0">−</button>
-                           <input type="text" class="quanty" value="1" min="1" data-id="" aria-label="quantity" pattern="[0-9]*" name="quantity" id="" data-submit=""/>
-                           <button type="button" class="extras" data-id="" data-qty="11">+</button>
+
+
                        </div>
-                        <button className="btn_agregar">Agregar</button>
+
                     </div>
 
                 </div>

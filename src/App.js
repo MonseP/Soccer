@@ -2,19 +2,22 @@ import React, { Component } from 'react';
 import {Routes} from './routes';
 import './App.css';
 import NavContainer from './components/nav/NavContainer';
-import { ParallaxProvider } from 'react-scroll-parallax';
 import Footer from './components/footer/Footer';
+import { ParallaxProvider } from 'react-scroll-parallax';
+
 
 class App extends Component {
     render() {
         return (
             <ParallaxProvider >
                 <div>
-                    <NavContainer />
+                   <NavContainer />
+
                     <div>
                         <Routes />
                     </div>
-                    <Footer />
+                     <Footer />
+
                 </div>
             </ParallaxProvider>
         );

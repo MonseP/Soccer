@@ -8,7 +8,7 @@ export const ProductListDisplay = ({products}) => {
 
     return (
         <div className="productos">
-            <h2 className="titulo bot">Productos</h2>
+            <h2 className="titulo bot">Equipos</h2>
             <Cart  />
         </div>
     );

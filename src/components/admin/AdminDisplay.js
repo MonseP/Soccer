@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './Admin.css';
 import Boton from './Boton.js';
-import { message } from 'antd'
 import {Link, NavLink} from 'react-router-dom';
 import { Tabs } from 'antd';
 import { Modal, Button } from 'antd';
@@ -30,6 +29,7 @@ class AdminDisplay extends Component {
         newProduct:{
 
         },
+
         products: [
 
         ],
@@ -54,7 +54,7 @@ class AdminDisplay extends Component {
                 products.push(nino);
                 this.setState({products});
             });
-        firebase.database().ref("products")
+        firebase.database().ref("product")
             .on("child_removed", snap =>{
                 let id = snap.key;
                 products = products.filter(p=>p.id !==id);
@@ -62,18 +62,20 @@ class AdminDisplay extends Component {
             });
     };
 
-    remove = (id) => {
-          if (window.confirm("Estas seguro de esto?")) {
-          firebase.database().ref("products")
 
-                  .remove()
-                  .child(id)
-                  .then(r => message.success('Evento eliminado'))
-                  .catch(e => message.warning("no se borró"));
-          }
 
-  };
 
+    remove = (id) =>{
+        if(window.confirm("¿Seguro de Eliminar todo?")){
+            firebase.database().ref("product")
+            .child(id)
+
+                .remove()
+                .then(r=>toastr.warning("eliminado"))
+                .catch(e=>{
+                    toastr.error("no se puede")});
+        }
+    };
     onChangeForm = (e) => {
         let newProduct = this.state.newProduct;
         const field = e.target.name;
@@ -154,7 +156,7 @@ class AdminDisplay extends Component {
                                   <Column
                                        render={(text, record) => (
                                         <span>
-                                      <Boton/>
+                                  <Button onClick></Button>
 
                                         </span>
                                                 )}
@@ -218,21 +220,16 @@ class AdminDisplay extends Component {
                                         key="cant"
                                     />
 
+                                
 
 
-                                    <Column
-                                         title= "Delete"
-                                          key="name"
-                                          render={(text) => (
-                                           <span>
-                                      <Button type="primary" onClick={this.remove}>Delete</Button>
 
-                                           </span>
-                                                   )}
-                                           />
                                 </Table>
 
+
+
                                     <Button type="primary" onClick={this.showModal}>Agregar</Button>
+                                      <Button type="primary" onClick={this.remove} > Eliminar </Button>
                                 <Modal
                                     title="Agregar un nuevo producto"
                                     visible={this.state.visible}
