@@ -12,8 +12,8 @@ export const LoginDisplay = ({mostrar, toggleMostrar, saveInput, onSubmit, error
             <p> ¡Bienvenido a</p>
             <p>Soccer Master!</p>
             <p>La mejor aplicación</p>
-            <p>del fútbol</p>
-               <p id="bienvenido-amateur"> Amateur</p>
+            <p>del fútbol  Amateur</p>
+               
 
 
 

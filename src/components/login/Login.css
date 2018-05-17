@@ -1,5 +1,5 @@
 .login{
-    background-image: url('http://bozhuwallpaper.com/img/nike-football-wallpapers-wide-As-Wallpaper-HD.jpg');
+    background-image: url('../../assets/fondodenoche.jpg');
     background-position: center;
  background-size: cover;
  width: 100%;
@@ -17,11 +17,11 @@
   position: absolute;
   color: white;
   font-size:50px;
-  top:120px;
+  top:50px;
 }
 #bienvenido-amateur{
     font-size:60px;
-    text-decoration: underline;
+
 }
 .card_login{
     background-color: white;
