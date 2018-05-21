@@ -65,12 +65,14 @@ class AdminDisplay extends Component {
 
 
 
-    remove = (id) =>{
+    remove = () =>{
         if(window.confirm("¿Seguro de Eliminar todo?")){
-            firebase.database().ref("product")
-            .child(id)
+            firebase.database().ref("products")
+              .child()
+
 
                 .remove()
+
                 .then(r=>toastr.warning("eliminado"))
                 .catch(e=>{
                     toastr.error("no se puede")});
@@ -148,90 +150,64 @@ class AdminDisplay extends Component {
                 <h2>Panel de Administrador</h2>
                 <div className="panel_admin">
 
-                        <Tabs defaultActiveKey="1" onChange={callback}>
-                            <TabPane tab="Órdenes" key="1">
-                                <h3 className="tab_name">Órdenes</h3>
-                                <Table  dataSource={products} >
 
-                                  <Column
-                                       render={(text, record) => (
-                                        <span>
-                                  <Button onClick></Button>
 
-                                        </span>
-                                                )}
+
+                                <h3 className="tab_name">Lista de los equipos</h3>
+                                <Table dataSource={products}>
+
+                                        <Column
+
+                                            title="Nombre del equipo"
+                                            dataIndex="name"
+                                            key="name"
+                                            render={(text, record) => (
+
+                                            <span >
+
+                                          <Link  to="/players">  <p style={{color:"#0066b0", textDecoration:"underline"}}>{record.name}</p></Link>
+
+                                            </span>
+                                                    )}
                                         />
-                                  <Column
-                                       title= "Nombre del producto"
-                                      dataIndex="name"
-                                        key="name"
-                                        render={(text, record) => (
-                                        <span>
-                                        <a href="./">{record.name}</a>
 
-                                        </span>
-                                                )}
-                                        />
 
                                     <Column
-                                        title="Etiqueta"
+                                        title="No.Títulos"
+                                        dataIndex="price"
+                                        key="price"
+                                    />
+                                    <Column
+                                        title="Copas"
+                                        dataIndex="cant"
+                                        key="cant"
+                                    />
+
+                                    <Column
+                                        title="Ciudad y Estado"
                                         dataIndex="info"
                                         key="info"
                                     />
 
                                     <Column
-                                        title="Precio"
-                                        dataIndex="price"
-                                        key="price"
-                                    />
-                                    <Column
-                                        title="Cantidad"
-                                        dataIndex="cant"
-                                        key="cant"
+                                        title="Descripción"
+                                        dataIndex="desc"
+                                        key="desc"
                                     />
 
-                                </Table>
 
-                            </TabPane>
-                            <TabPane tab="Productos" key="2">
-                                <h3 className="tab_name">Lista de Productos</h3>
-                                <Table dataSource={products}>
-
-                                        <Column
-
-                                            title="Nombre del Producto"
-                                            dataIndex="name"
-                                            key="name"
-                                        />
-                                        <Column
-                                            title="Etiqueta"
-                                            dataIndex="info"
-                                            key="info"
-                                        />
-
-                                    <Column
-                                        title="Precio"
-                                        dataIndex="price"
-                                        key="price"
-                                    />
-                                    <Column
-                                        title="Cantidad"
-                                        dataIndex="cant"
-                                        key="cant"
-                                    />
-
-                                
 
 
 
                                 </Table>
+                                <Button type="primary"  style={{margin:"10px"}} onClick={this.showModal}>Agregar</Button>
 
 
 
-                                    <Button type="primary" onClick={this.showModal}>Agregar</Button>
+
                                       <Button type="primary" onClick={this.remove} > Eliminar </Button>
                                 <Modal
-                                    title="Agregar un nuevo producto"
+                                    title="Agregar un nuevo equipo"
                                     visible={this.state.visible}
                                     onOk={this.onSave}
                                     onCancel={this.hideModal}
@@ -247,9 +223,7 @@ class AdminDisplay extends Component {
                                         onSave={this.onSave}
                                         />
                                 </Modal>
-                            </TabPane>
-                            <TabPane tab="Historial" key="3">Historial</TabPane>
-                        </Tabs>
+                        
                     </div>
             </div>
        );

@@ -1,5 +1,5 @@
-.productos{
-  background-image: url('../../assets/LIGAS-Y-EQUIPOS-FIFA-18.jpg');
+.product{
+  background-image: url('https://images.pexels.com/photos/274422/pexels-photo-274422.jpeg?auto=compress&cs=tinysrgb&h=650&w=940');
   background-position:center;
   background-size:cover;
     text-align: center;
@@ -74,8 +74,8 @@
     flex-wrap: wrap;
 }
 .img_product{
-    width:600px;
-    flex-grow: 2;
+    width:20px;
+    flex-grow: 1;
 }
 
 .box_mini_img{
@@ -189,7 +189,7 @@
     margin-bottom: 10px;
 }
 .box_im img{
-    width:100%;
+    width:80%;
     height:auto;
     margin: 0 auto;
 }

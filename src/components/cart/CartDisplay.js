@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 
 const organic = "http://www.skepticink.com/avant-garde/files/2015/09/organic.jpg";
 
-export const CartDisplay = ({id, img, name, desc, photos, price, text, info}) => {
+export const CartDisplay = ({id, img, name, desc, photos, cant, text, info}) => {
     if(!photos) img = organic;
     else img = photos[0];
 
@@ -14,10 +14,10 @@ export const CartDisplay = ({id, img, name, desc, photos, price, text, info}) =>
             <div className="cart_img ">
                 <img  src={img} alt=""/>
             </div>
-            <p className="name_product">{name}</p>
+            <p style={{color:"white"}}  className="name_product">{name}</p>
                 <div className="apear">
-                    <p className="pes">{info}</p>
-                    <p className="pes">$ {price} mxn</p>
+                    <p  style={{color:"white"}} className="pes">{info}</p>
+                    <p  style={{color:"white"}}  className="pes"> {cant} Copas ha ganado</p>
                 </div>
             </Link>
         </div>

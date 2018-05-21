@@ -6,6 +6,10 @@ import Login from './components/login/Login';
 import ProductDetail from './components/product/ProductDetail';
 import Contacto from './components/contacto/Contacto';
 import Admin from './components/admin/Admin';
+import TeamDetail from './components/admin/detail/TeamDetail';
+import Detail from './components/admin/detail/Detail';
+import TableContainer from './components/partidos/TableContainer';
+
 import HomeCarrito from './components/carro/HomeCarrito';
 import Pago from './components/carro/pago/Pago';
 import DireccionPago from './components/carro/direccion/DireccionPago';
@@ -13,13 +17,15 @@ import Perfil from './components/perfil/Perfil';
 import Politicas from './components/footer/Politicas';
 import FormasPago from './components/footer/FormasPago';
 import BeeContainer from './components/miel/BeeContainer';
-import GastosPage from './components/gastos/GastosPage';
-import AddGasto from './components/gastos/AddGasto';
+
 
 export const Routes = () => (
     <Switch>
         <Route exact path="/" component={Login}/>
         <Route exact path="/catalogo" component={Product}/>
+          <Route exact path="/players" component={Detail}/>
+        <Route path="/players/:id" component={TeamDetail} />
+
         <Route path="/login" component={Login}/>
         <Route path="/contacto" component={Contacto}/>
         <Route path="/preguntas" component={FormasPago}/>
@@ -29,8 +35,9 @@ export const Routes = () => (
         <Route path="/direccion" component={DireccionPago} />
         <Route path="/checkout" component={Pago} />
         <Route path="/perfil" component={Perfil} />
-        <Route path="/players" component={GastosPage} />
-            <Route path="/newplayer" component={AddGasto} />
+         <Route path="/partidos" component={TableContainer} />
+
+
        <Route path="/politicas-de-privacidad" component={Politicas}/>
 
 

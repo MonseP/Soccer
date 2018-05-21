@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import './Cart.css';
-import firebase from '../../firebase';
-import {CartDisplay} from './CartDisplay';
+import firebase from '../../../firebase';
+import {CartDisplay2} from './CartDisplay2';
 
-class Cart extends Component {
+class Cart2 extends Component {
     state = {
         products:[
 
@@ -23,11 +23,11 @@ class Cart extends Component {
     render() {
         return (
                 <div className="fl">
-                    {this.state.products.map((p, index)=><CartDisplay  key={index} {...p}/>)}
+                    {this.state.products.map((p, index)=><CartDisplay2  key={index} {...p}/>)}
                 </div>
 
         );
     }
 }
 
-export default Cart;
+export default Cart2;

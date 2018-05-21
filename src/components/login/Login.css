@@ -79,7 +79,7 @@
     text-align: left;
     width:90%;
     margin: 30px auto;
-    color:#889096;
+    color:black;
 }
 .log_email .input{
     width:100%;
@@ -91,24 +91,29 @@
     line-height:1.2;
     padding-left: 7px;
 
+
 }
 .ayuda{
     margin: 20px 0;
+    text-decoration:underline;
     text-align: center !important;
     color:#889096;
 }
 .btn_login{
-    background-color: #a7c49f;
+    background-color: #69b55e;
     width:50%;
     height:40px;
     padding: 3px 6px;
     margin-left: 25%;
 border: transparent;
- color:black;
+ color:white;
     cursor: pointer;
 }
 .btn_login:hover{
 letter-spacing:1px;
+    background-color: #7ea574;
+      width:51%;
+
 }
 .mostrar{
     margin: 0;
