@@ -3,6 +3,27 @@ import {TeamDetailDisplay} from './TeamDetailDisplay';
 import firebase from '../../../firebase';
 
 class TeamDetail extends Component{
+
+
+  state = {
+      isLogged:false,
+      user: null
+  };
+
+  componentWillMount() {
+      let user = localStorage.getItem("user");
+      // user = JSON.parse(user);
+      if (user) {
+          // console.log("si")
+          this.setState({isLogged:true, user})
+      }else{
+          this.setState({isLogged:false})
+          this.props.history.push("/login");
+      }
+  }
+
+
+  
     state= {
         product: {
 

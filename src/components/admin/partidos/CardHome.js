@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import './Product.css';
-import {ProductListDisplay} from './ProductListDisplay';
+import Cart from './Cart';
 
-class Home extends Component {
+import './Cart.css';
+
+class CardHome extends Component {
 
 
 
@@ -24,18 +25,17 @@ class Home extends Component {
     }
 
 
-     
-    componentDidMount () {
-        window.scroll(0, 0)
-    }
+
     render() {
         return (
-            <div id="productos">
-               <ProductListDisplay />
+        <div>
+           <Cart/>
 
-            </div>
+
+        </div>
+
         );
     }
 }
 
-export default Home;
+export default CardHome;

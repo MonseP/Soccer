@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import './Detail.css';
-import {TeamListDisplay} from './TeamListDisplay';
+import './Admin.css';
+import PartidosDisplay from './PartidosDisplay';
 
-class Detail extends Component {
-
+class Partidos extends Component {
   state = {
       isLogged:false,
       user: null
@@ -20,18 +19,18 @@ class Detail extends Component {
           this.props.history.push("/login");
       }
   }
-  
-    componentDidMount () {
-        window.scroll(0, 0)
-    }
+  componentDidMount () {
+      window.scroll(0, 0)
+  }
+
+
     render() {
         return (
-            <div id="product">
-               <TeamListDisplay />
 
-            </div>
+            <PartidosDisplay />
+
         );
     }
 }
 
-export default Detail;
+export default Partidos;

@@ -6,10 +6,9 @@ import Login from './components/login/Login';
 import ProductDetail from './components/product/ProductDetail';
 import Contacto from './components/contacto/Contacto';
 import Admin from './components/admin/Admin';
+import Partidos from './components/admin/partidos/Partidos';
 import TeamDetail from './components/admin/detail/TeamDetail';
 import Detail from './components/admin/detail/Detail';
-import TableContainer from './components/partidos/TableContainer';
-
 import HomeCarrito from './components/carro/HomeCarrito';
 import Pago from './components/carro/pago/Pago';
 import DireccionPago from './components/carro/direccion/DireccionPago';
@@ -17,6 +16,7 @@ import Perfil from './components/perfil/Perfil';
 import Politicas from './components/footer/Politicas';
 import FormasPago from './components/footer/FormasPago';
 import BeeContainer from './components/miel/BeeContainer';
+import CardHome from './components/admin/partidos/CardHome';
 
 
 export const Routes = () => (
@@ -25,6 +25,9 @@ export const Routes = () => (
         <Route exact path="/catalogo" component={Product}/>
           <Route exact path="/players" component={Detail}/>
         <Route path="/players/:id" component={TeamDetail} />
+      <Route path="/partidos" component={Partidos} />
+      <Route path="/partidosdetalle" component={CardHome} />
+
 
         <Route path="/login" component={Login}/>
         <Route path="/contacto" component={Contacto}/>
@@ -35,7 +38,6 @@ export const Routes = () => (
         <Route path="/direccion" component={DireccionPago} />
         <Route path="/checkout" component={Pago} />
         <Route path="/perfil" component={Perfil} />
-         <Route path="/partidos" component={TableContainer} />
 
 
        <Route path="/politicas-de-privacidad" component={Politicas}/>

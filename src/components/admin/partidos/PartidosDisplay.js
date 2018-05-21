@@ -5,11 +5,10 @@ import {Link, NavLink} from 'react-router-dom';
 import { Tabs } from 'antd';
 import { Modal, Button } from 'antd';
 import { Table } from 'antd';
-import firebase from '../../firebase';
+import firebase from '../../../firebase';
 import toastr from 'toastr';
-import Partidos from './partidos/Partidos';
 import FontAwesome from 'react-fontawesome';
-import ProductForm from './ProductForm';
+import PartidosForm from './PartidosForm';
 
 
 const TabPane = Tabs.TabPane;
@@ -20,18 +19,18 @@ const { Column } = Table;
 
 
 
-class AdminDisplay extends Component {
+class PartidosDisplay extends Component {
 
 
 
     state = {
         file:null,
         errors:null,
-        newProduct:{
+        newPartido:{
 
         },
 
-        products: [
+        partidos: [
 
         ],
         visible: false }
@@ -47,19 +46,19 @@ class AdminDisplay extends Component {
     };
 
     componentWillMount(){
-        let products = this.state.products;
-        firebase.database().ref("products")
+        let partidos = this.state.partidos;
+        firebase.database().ref("partidos")
             .on("child_added", snap=>{
                 let nino = snap.val();
                 nino["id"] = snap.key;
-                products.push(nino);
-                this.setState({products});
+                partidos.push(nino);
+                this.setState({partidos});
             });
-        firebase.database().ref("product")
+        firebase.database().ref("partido")
             .on("child_removed", snap =>{
                 let id = snap.key;
-                products = products.filter(p=>p.id !==id);
-                this.setState({products});
+                partidos = partidos.filter(p=>p.id !==id);
+                this.setState({partidos});
             });
     };
 
@@ -68,7 +67,7 @@ class AdminDisplay extends Component {
 
     remove = () =>{
         if(window.confirm("¿Seguro de Eliminar todo?")){
-            firebase.database().ref("products")
+            firebase.database().ref("partidos")
               .child()
 
 
@@ -80,12 +79,12 @@ class AdminDisplay extends Component {
         }
     };
     onChangeForm = (e) => {
-        let newProduct = this.state.newProduct;
+        let newPartido = this.state.newPartido;
         const field = e.target.name;
         const value = e.target.value;
-        newProduct[field] = value;
-        this.setState({newProduct});
-        console.log(newProduct);
+        newPartido[field] = value;
+        this.setState({newPartido});
+        console.log(newPartido);
     };
     onChangeFile = (e) => {
         const file = e.target.files[0];
@@ -93,8 +92,8 @@ class AdminDisplay extends Component {
     };
 
     validateForm = () => {
-        let newProduct = this.state.newProduct;
-        console.log(newProduct)
+        let newPartido = this.state.newPartido;
+        console.log(newPartido)
         let errors = this.state.errors;
         let isOk = true;
         return isOk;
@@ -102,8 +101,8 @@ class AdminDisplay extends Component {
     onSave = (e) =>{
         e.preventDefault()
         if(this.validateForm()){
-            firebase.database().ref("products")
-                .push(this.state.newProduct)
+            firebase.database().ref("partidos")
+                .push(this.state.newPartido)
                 .then(r=>{
                     console.log(r.key)
                     if(this.state.file){
@@ -114,9 +113,9 @@ class AdminDisplay extends Component {
                             .put(this.state.file)
                             .then(s=>{
                                 const link = s.downloadURL;
-                                let newProduct = this.state.newProduct;
-                                newProduct["photos"] =[link];
-                                updates[`/products/${r.key}`] = newProduct;
+                                let newPartido = this.state.newPartido;
+                                newPartido["photos"] =[link];
+                                updates[`/partidos/${r.key}`] = newPartido;
                                 firebase.database().ref().update((updates));
 
                             });
@@ -144,59 +143,84 @@ class AdminDisplay extends Component {
     render() {
 
 
-        const {products, errors} = this.state;
+        const {partidos, errors} = this.state;
 
     return (
-        <div className="admin">
-                <h2>Panel de Administrador</h2>
-                <div className="panel_admin">
+        <div>
 
-                  <Tabs onChange={callback} type="card">
+                <div>
 
 
-                                 <TabPane tab="Agregar equipos" key="1">
 
-                                <h3 className="tab_name">Lista de los equipos</h3>
-                                <Table dataSource={products}>
+
+                                <h3 className="tab_name">Partidos</h3>
+                                <Table dataSource={partidos}>
 
                                         <Column
 
-                                            title="Nombre del equipo"
-                                            dataIndex="name"
-                                            key="name"
+                                            title="Equipo"
+                                            dataIndex="nameone"
+                                            key="nameone"
                                             render={(text, record) => (
 
                                             <span >
 
-                                          <Link  to="/players">  <p style={{color:"#0066b0", textDecoration:"underline"}}>{record.name}</p></Link>
+                                          <Link  to="/partidosdetalle">  <p style={{color:"#0066b0", textDecoration:"underline"}}>{record.nameone}</p></Link>
 
                                             </span>
                                                     )}
                                         />
 
 
-                                    <Column
-                                        title="No.Títulos"
-                                        dataIndex="price"
-                                        key="price"
-                                    />
-                                    <Column
-                                        title="Copas"
-                                        dataIndex="cant"
-                                        key="cant"
-                                    />
+                                        <Column
+
+                                            title="Equipo Contrincante"
+                                            dataIndex="nametwo"
+                                            key="nametwo"
+                                            
+                                        />
+
+
+
 
                                     <Column
-                                        title="Ciudad y Estado"
+                                        title=" Tipo de partido"
                                         dataIndex="info"
                                         key="info"
                                     />
+                                    <Column
+                                        title="Fecha"
+                                        dataIndex="fecha"
+                                        key="fecha"
+                                    />
+
+
 
                                     <Column
-                                        title="Descripción"
-                                        dataIndex="desc"
-                                        key="desc"
+                                        title="Horario"
+                                        dataIndex="horario"
+                                        key="horario"
                                     />
+
+
+                                    <Column
+                                        title="Cancha"
+                                        dataIndex="cancha"
+                                        key="cancha"
+                                    />
+
+
+
+                                     <Column
+                                            title="Descripción"
+                                            dataIndex="desc"
+                                            key="desc"
+                                        />
+
+
+
+
+
 
 
 
@@ -217,29 +241,15 @@ class AdminDisplay extends Component {
                                     okText="Guardar"
                                     cancelText="Cancelar"
                                 >
-                                    <ProductForm
+                                    <PartidosForm
                                         onChangeFile={this.onChangeFile}
-                                        products={products}
-                                        product={this.state.newProduct}
+                                        partidos={partidos}
+                                        partido={this.state.newPartido}
                                         onChangeForm={this.onChangeForm}
                                         errors={errors}
                                         onSave={this.onSave}
                                         />
                                 </Modal>
-
-                                </TabPane>
-
-
-                                <TabPane tab="Agregar partidos" key="2">
-
-
-                        <Partidos/>
-
-
-
-                                </TabPane>
-
-                                  </Tabs>
 
                     </div>
             </div>
@@ -247,4 +257,4 @@ class AdminDisplay extends Component {
     }
 }
 
-export default AdminDisplay;
+export default PartidosDisplay;

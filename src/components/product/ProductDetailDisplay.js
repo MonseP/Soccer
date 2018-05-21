@@ -66,7 +66,7 @@ export const ProductDetailDisplay = ({name, desc, price,photos, info}) => {
                         <br/>
                         <p className="descript_data">{desc}</p>
                        <div className="box_price">
-                        <p className="descript_price">$ {price} MXN</p>
+                        <p className="descript_price">Títulos {price} </p>
 
 
                        </div>
