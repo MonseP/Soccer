@@ -8,7 +8,7 @@ export const TeamListDisplay = ({products}) => {
 
     return (
         <div className="product">
-            <h2 className="titulo bot">Equipos</h2>
+            <h2 className="titulo bot">Jugadores</h2>
             <h3 style={{color:"white", fontSize:"30px"}}  >Seleccione el equipo para poder ver a los jugadores</h3>
             <Cart2 />
         </div>

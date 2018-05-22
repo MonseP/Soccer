@@ -29,16 +29,16 @@ class Footer extends Component {
                     <div className="redes">
                         <h3>Siguenos en </h3>
                         <div className="social">
-                            <Link to="  " target="blank">
+                            <Link to="https://www.facebook.com/Soccer-Master-178651229621468/" target="blank">
                                <p> <SocialIcon className="icon" network="facebook"  /> </p>
                             </Link>
-                            <Link to="" target="blank">
+                            <Link to="https://twitter.com/SoccerMasterOfi" target="blank">
                           <p> <SocialIcon className="icon" network="twitter" /> </p>
 
                             </Link>
 
 
-                            <Link to="https://www.google.com/search?q=padding+margin&safe=active&client=firefox-b-ab&source=lnms&tbm=isch&sa=X&ved=0ahUKEwi51I6-yOzaAhWF71MKHT82B4wQ_AUICigB&biw=1280&bih=632#imgrc=2JfQ4Fk2wmqSKM:" target="blank">
+                            <Link to="https://www.instagram.com/appsoccermaster/" target="blank">
 
                         <p>  <SocialIcon className="icon" network="instagram" /> </p>
 
