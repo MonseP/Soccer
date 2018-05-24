@@ -1,5 +1,12 @@
+.back-admin{
+  background-color:#87A4B5;
+background-position:center;
+background-size:cover;
+}
+
+
+
 .admin{
-background-image: url('../../assets/LIGAS-Y-EQUIPOS-FIFA-18.jpg');
 background-position:center;
 background-size:cover;
     padding-top: 70px;

@@ -153,8 +153,8 @@ class PartidosDisplay extends Component {
 
 
 
-                                <h3 className="tab_name">Partidos</h3>
-                                <Table dataSource={partidos}>
+                                <h3  style={{color:"white"}}  className="tab_name">Partidos</h3>
+                                <Table  style={{background:"white"}}  dataSource={partidos}>
 
                                         <Column
 
@@ -177,7 +177,7 @@ class PartidosDisplay extends Component {
                                             title="Equipo Contrincante"
                                             dataIndex="nametwo"
                                             key="nametwo"
-                                            
+
                                         />
 
 

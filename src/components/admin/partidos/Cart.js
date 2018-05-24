@@ -3,6 +3,7 @@ import './Cart.css';
 import firebase from '../../../firebase';
 import {CartDisplay3} from './CartDisplay3';
 
+
 class Cart extends Component {
 
 
@@ -48,6 +49,7 @@ class Cart extends Component {
           <div className="contenedor">
                 <div className="fl">
                     {this.state.partidos.map((p, index)=><CartDisplay3  key={index} {...p}/>)}
+
                 </div>
                 </div>
 

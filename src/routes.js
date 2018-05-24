@@ -17,6 +17,7 @@ import Politicas from './components/footer/Politicas';
 import FormasPago from './components/footer/FormasPago';
 import BeeContainer from './components/miel/BeeContainer';
 import CardHome from './components/admin/partidos/CardHome';
+import Selection from './components/admin/partidos/Selection';
 
 
 export const Routes = () => (
@@ -38,6 +39,7 @@ export const Routes = () => (
         <Route path="/direccion" component={DireccionPago} />
         <Route path="/checkout" component={Pago} />
         <Route path="/perfil" component={Perfil} />
+        <Route path="/select" component={Selection} />
 
 
        <Route path="/politicas-de-privacidad" component={Politicas}/>

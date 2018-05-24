@@ -148,7 +148,7 @@ class AdminDisplay extends Component {
 
     return (
         <div className="admin">
-                <h2>Panel de Administrador</h2>
+                <h2  style={{color:"white"}} >Panel de Administrador</h2>
                 <div className="panel_admin">
 
                   <Tabs onChange={callback} type="card">
@@ -156,8 +156,8 @@ class AdminDisplay extends Component {
 
                                  <TabPane tab="Agregar equipos" key="1">
 
-                                <h3 className="tab_name">Lista de los equipos</h3>
-                                <Table dataSource={products}>
+                                <h3  style={{color:"white"}}  className="tab_name">Lista de los equipos</h3>
+                                <Table  style={{background:"white"}}  dataSource={products}>
 
                                         <Column
 

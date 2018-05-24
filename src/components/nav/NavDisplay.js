@@ -17,10 +17,10 @@ export const NavDisplay = ({isLogged, signOut, photoURL}) => {
             </div>
 
             <div className="pestanas">
-              
+
 
                 <Link to="/Admin">
-                    <span className="less">Administracíon</span>
+                    <span className="less">Administración</span>
                 </Link>
 
                 <hr className="divider"/>
@@ -36,7 +36,7 @@ export const NavDisplay = ({isLogged, signOut, photoURL}) => {
 
                             <span><Link  to="/catalogo">Equipos</Link></span>
                             <span><Link to="/players">Jugadores</Link></span>
-                            <span><Link to="/Admin">Administracíon</Link></span>
+                            <span><Link to="/Admin">Administración</Link></span>
                             <span><Link onClick={signOut} to="/">Cerrar sesión</Link></span>
                         </div>
 

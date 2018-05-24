@@ -27,7 +27,12 @@ class Admin extends Component {
     render() {
         return (
 
+          <div className="back-admin"> 
+
             <AdminDisplay />
+
+
+            </div>
 
         );
     }
