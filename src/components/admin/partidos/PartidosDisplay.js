@@ -151,8 +151,8 @@ class PartidosDisplay extends Component {
                         <Column
 
                             title="Equipo"
-                            dataIndex="nameone"
-                            key="nameone"
+                            dataIndex="name"
+                            key="name"
                             render={(text, record) => (
 
                                 <span>
@@ -160,11 +160,14 @@ class PartidosDisplay extends Component {
                                           <Link to="/partidosdetalle">  <p style={{
                                               color: "#0066b0",
                                               textDecoration: "underline"
-                                          }}>{record.nameone}</p></Link>
+                                          }}>{record.name}</p></Link>
 
                                 </span>
                             )}
                         />
+
+
+                      
 
 
                         <Column
@@ -175,6 +178,7 @@ class PartidosDisplay extends Component {
 
                         />
 
+                     
 
                         <Column
                             title=" Tipo de partido"

@@ -44,7 +44,7 @@ class PartidosForm extends Component {
 
     recuperarEquipos = () => {
 
-        firebase.database().ref('tiposPago')
+        firebase.database().ref('products')
             .once('value')
             .then(
                 (r) =>{
@@ -72,18 +72,30 @@ class PartidosForm extends Component {
     render() {
         const {tiposPagoLista} = this.state;
         return (
+
+
             <Form onSubmit={this.handleSubmit} className="login-form">
 
                 <p>Equipos que se enfrentan</p>
 
+
+                
+
                 <DropDownList
                     ref="drop1"
                     data={tiposPagoLista}
-                    nombre="equipo"
+                    name="name"
+                    onChange={this.props.onChangeForm}
+                       value={this.props.partido.name}
+       
 
-                    handleChange={this.handleChange}
-                    etiqueta="Equipo"
+                  
                 />
+
+
+
+
+
 
                 <Input name="nametwo"
                        style={{margin: "10px 0"}}
@@ -92,6 +104,8 @@ class PartidosForm extends Component {
                        prefix={<Icon type="smile-o"
                                      style={{color: 'rgba(0,0,0,.25)'}}/>} placeholder="Real Madrid"/>
                 <p> Tipo de Partido</p>
+
+
                 <Input name="info"
                        style={{margin: "10px 0"}}
                        value={this.props.partido.info}
@@ -103,6 +117,7 @@ class PartidosForm extends Component {
 
 
                 <Input name="fecha"
+                      type="date"
                        style={{margin: "10px 0"}}
                        value={this.props.partido.fecha}
                        onChange={this.props.onChangeForm}
