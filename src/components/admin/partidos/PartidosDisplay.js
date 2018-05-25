@@ -167,9 +167,6 @@ class PartidosDisplay extends Component {
                         />
 
 
-                      
-
-
                         <Column
 
                             title="Equipo Contrincante"
@@ -178,7 +175,6 @@ class PartidosDisplay extends Component {
 
                         />
 
-                     
 
                         <Column
                             title=" Tipo de partido"

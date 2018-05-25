@@ -47,10 +47,10 @@ class PartidosForm extends Component {
         firebase.database().ref('products')
             .once('value')
             .then(
-                (r) =>{
+                (r) => {
                     console.log(r.val());
                     const {tiposPagoLista} = this.state;
-                    for (let key in r.val()){
+                    for (let key in r.val()) {
                         console.log(r.val()[key]);
                         tiposPagoLista.push(r.val()[key]);
                         console.log(tiposPagoLista);
@@ -79,23 +79,22 @@ class PartidosForm extends Component {
                 <p>Equipos que se enfrentan</p>
 
 
-                
-
                 <DropDownList
                     ref="drop1"
                     data={tiposPagoLista}
                     name="name"
                     onChange={this.props.onChangeForm}
-                       value={this.props.partido.name}
-       
+                    value={this.state.tiposPagoLista.name}
 
-                  
+
                 />
 
-
-
-
-
+                <Input name="name"
+                       style={{margin: "10px 0"}}
+                       onChange={this.props.onChangeForm}
+                       value={this.props.partido.name}
+                       prefix={<Icon type="smile-o"
+                                     style={{color: 'rgba(0,0,0,.25)'}}/>} placeholder="Barcelona"/>
 
                 <Input name="nametwo"
                        style={{margin: "10px 0"}}
@@ -117,7 +116,7 @@ class PartidosForm extends Component {
 
 
                 <Input name="fecha"
-                      type="date"
+                       type="date"
                        style={{margin: "10px 0"}}
                        value={this.props.partido.fecha}
                        onChange={this.props.onChangeForm}
