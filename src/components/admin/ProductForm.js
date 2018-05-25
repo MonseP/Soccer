@@ -31,12 +31,13 @@ class ProductForm extends Component {
     render() {
         return (
             <Form onSubmit={this.handleSubmit} className="login-form">
-                    <Input name="name"
-                           style={{margin:"10px 0"}}
-                           onChange={this.props.onChangeForm}
-                           value={this.props.product.name}
-                           prefix={<Icon type="user"
-                                         style={{ color: 'rgba(0,0,0,.25)'}} />} placeholder="Nombre" />
+              <Input name="name"
+                     type="text"
+                     style={{margin:"10px 0"}}
+                     value={this.props.product.name}
+                     onChange={this.props.onChangeForm}
+                     prefix={<Icon type="tag-o"
+                                   style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="Nombre" />
                     <Input name="price"
                            type="number"
                            style={{margin:"10px 0"}}
