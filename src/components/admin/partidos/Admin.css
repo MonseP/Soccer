@@ -1,9 +1,15 @@
 .admin{
+  background-color:#87A4B5;
 background-position:center;
 background-size:cover;
     padding-top: 70px;
     width:80%;
     margin:0 auto;
+}
+.back-admin{
+
+background-position:center;
+background-size:cover;
 }
 .panel_admin{
     margin-top: 50px;

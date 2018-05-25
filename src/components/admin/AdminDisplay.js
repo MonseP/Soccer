@@ -151,7 +151,7 @@ class AdminDisplay extends Component {
                 <h2  style={{color:"white"}} >Panel de Administrador</h2>
                 <div className="panel_admin">
 
-                  <Tabs onChange={callback} type="card">
+                  <Tabs  onChange={callback} type="card">
 
 
                                  <TabPane tab="Agregar equipos" key="1">
