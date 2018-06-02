@@ -215,7 +215,7 @@ class PartidosDisplay extends Component {
 
                     <Button type="primary" onClick={this.remove}> Eliminar </Button>
                     <Modal
-                        title="Agregar un nuevo equipo"
+                        title="Agregar un nuevo partido"
                         visible={this.state.visible}
                         onOk={this.onSave}
                         onCancel={this.hideModal}

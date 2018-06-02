@@ -8,6 +8,9 @@ import {connect} from 'react-redux';
 import {loginAction} from '../../redux/actions/userAction';
 
 
+
+
+
 const codigos = {
     "auth/wrong-password":"Tu contraseña es incorrecta",
     "auth/email-already-in-use":"Este usuario ya esta registrado"
@@ -29,7 +32,6 @@ class Login extends Component {
         }
 
     };
-
     // componentWillMount(){
     //     const user = localStorage.getItem("user");
     //     if(user){
@@ -52,6 +54,10 @@ class Login extends Component {
             // console.log(error)
         });
     }
+
+ 
+
+  
 
     toggleMostrar = () => {
         this.setState({mostrar:!this.state.mostrar});
@@ -97,6 +103,13 @@ class Login extends Component {
             });
 
     };
+
+
+
+ 
+
+
+
     loginGoogle = () => {
         const provider = new firebase.auth.GoogleAuthProvider();
         firebase.auth().signInWithRedirect(provider);

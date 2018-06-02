@@ -2,7 +2,7 @@ import React from 'react';
 import './Cart.css';
 import {Link} from 'react-router-dom';
 
-const organic = "http://www.skepticink.com/avant-garde/files/2015/09/organic.jpg";
+const organic = "http://static.wixstatic.com/media/3f632d_b631890f451c35ca71bc1d298a93310f.png_256";
 
 export const CartDisplay3 = ({id, img, nameone, nametwo, cancha, photos, fecha,horario}) => {
     if(!photos) img = organic;

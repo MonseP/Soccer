@@ -1,6 +1,3 @@
-/**
- * Created by brendaortega on 24/01/18.
- */
 import React, { Component } from 'react';
 import {NavDisplay} from './NavDisplay';
 import './Nav.css';
@@ -45,6 +42,8 @@ class NavContainer extends Component {
             this.setState({isLogged:false})
         }
     }
+
+
 
     render() {
 

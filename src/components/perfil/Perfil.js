@@ -35,7 +35,8 @@ class Perfil extends React.Component {
             <User/>
             <div  className="perfil-completo" style={{background: 'white'}}>
                 <PerfilPersonal    isLogged={this.props.isLogged}
-                                   {...this.props.user}/>
+                                   {...this.props.user}
+                           />
                 <TabsMenu/>
             </div>
 

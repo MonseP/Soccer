@@ -1,0 +1,56 @@
+.miel{
+    color:white;
+    font-size: 40px;
+    text-align: center;
+    width:100%;
+    height:200px;
+    background-size: cover;
+    background-position: center;
+    background-image: url("https://images.pexels.com/photos/9003/night.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+    /*background-image: url('https://cdn.pixabay.com/photo/2016/11/18/19/24/food-1836523_1280.jpg');*/
+
+}
+
+.cover{
+    background-color: rgba(0,0,0,0);
+    text-align: justify;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    line-height: 90px;
+}
+
+
+.miel_present{
+    width:80%;
+    margin: 80px auto;
+}
+.card_miel{
+    box-shadow: 4px 4px 14px 0px rgba(0,0,0,0.1);
+    box-sizing: border-box;
+    padding: 2em;
+    width:400px;
+    min-width: 400px;
+    position: relative;
+    left: -250px;
+    display: inline-block;
+    margin:0 auto;
+    -webkit-transform: translate(0%, 30%);
+    transform: translate(30%, 30%);
+    background-color: #fff;
+    text-align: left;
+
+    line-height: 1.5;
+    font-size: 15px;
+
+}
+.box_miel{
+    /*width:400px;*/
+    /*flex-grow: 1;*/
+    /*text-align: center;*/
+}
+.miel_img{
+    width:600px;
+}

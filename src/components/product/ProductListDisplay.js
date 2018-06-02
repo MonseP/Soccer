@@ -1,7 +1,7 @@
 import React from 'react';
 import './Product.css';
 import FontAwesome from 'react-fontawesome';
-import Cart from '../cart/Cart';
+import Cart from '../card/Cart';
 import Nav from '../nav/NavDisplay';
 
 export const ProductListDisplay = ({products}) => {

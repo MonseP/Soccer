@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import './Admin.css';
-import  Cart from './contacto/Cart';
+import Boton from './Boton.js';
 import {Link, NavLink} from 'react-router-dom';
 import { Tabs } from 'antd';
 import { Modal, Button } from 'antd';
 import { Table } from 'antd';
 import firebase from '../../firebase';
 import toastr from 'toastr';
-import Partidos from './partidos/Partidos';
+import FontAwesome from 'react-fontawesome';
 import ProductForm from './ProductForm';
+import './Admin.css';
 
 
 const TabPane = Tabs.TabPane;
@@ -19,7 +19,7 @@ const { Column } = Table;
 
 
 
-class AdminDisplay extends Component {
+class Entrenador extends Component {
 
 
 
@@ -147,7 +147,7 @@ class AdminDisplay extends Component {
 
     return (
         <div className="admin">
-                <h2  style={{color:"white"}} >Panel de Administrador</h2>
+                <h2  style={{color:"white"}} >Panel del Entrenador</h2>
                 <div className="panel_admin">
 
                   <Tabs  onChange={callback} type="card">
@@ -229,25 +229,6 @@ class AdminDisplay extends Component {
                                 </TabPane>
 
 
-                                <TabPane tab="Agregar partidos" key="2">
-
-
-                        <Partidos/>
-
-
-
-                                </TabPane>
-
-
-
-                      <TabPane tab="Ver contacto" key="3">
-
-
-                          <Cart/>
-
-
-
-                      </TabPane>
 
                                   </Tabs>
 
@@ -257,4 +238,4 @@ class AdminDisplay extends Component {
     }
 }
 
-export default AdminDisplay;
+export default Entrenador;

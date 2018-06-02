@@ -18,6 +18,12 @@ export const NavDisplay = ({isLogged, signOut, photoURL}) => {
 
             <div className="pestanas">
 
+               <Link to="/entrenador">
+                    <span className="less">Entrenador</span>
+                </Link>
+
+                           <hr className="divider"/>
+
 
                 <Link to="/Admin">
                     <span className="less">Administración</span>
@@ -28,7 +34,7 @@ export const NavDisplay = ({isLogged, signOut, photoURL}) => {
                 {!isLogged ?
                     <div className="log">
                         <Link to="/login" >
-                            <span >Login</span>
+                            
                         </Link></div>:
                     <div className="dropdown" style={{display:"flex", alignItems:"center"}}>
                         <button className="dropbtn"><img className="userphoto" src={photoURL ? photoURL : user} alt=""/></button>

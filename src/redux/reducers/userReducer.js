@@ -1,6 +1,3 @@
-/**
- * Created by brendaortega on 14/01/18.
- */
 import {combineReducers} from 'redux';
 import {LOGIN_SUCCESS, LOGOUT_SUCCESS} from '../actions/userAction';
 

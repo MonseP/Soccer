@@ -1,6 +1,3 @@
-/**
- * Created by brendaortega on 14/01/18.
- */
 import {combineReducers} from 'redux';
 import userReducer from './userReducer';
 

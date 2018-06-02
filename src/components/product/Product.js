@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import './Product.css';
+import firebase from '../../firebase';
 import {ProductListDisplay} from './ProductListDisplay';
 
 class Home extends Component {
 
-
-
-    state = {
+ state = {
         isLogged:false,
         user: null
     };
@@ -14,7 +13,7 @@ class Home extends Component {
     componentWillMount() {
         let user = localStorage.getItem("user");
         // user = JSON.parse(user);
-        if (user) {
+        if (user ) {
             // console.log("si")
             this.setState({isLogged:true, user})
         }else{
@@ -22,6 +21,8 @@ class Home extends Component {
             this.props.history.push("/login");
         }
     }
+
+
 
 
      
